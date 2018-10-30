@@ -2,10 +2,9 @@
 import pymysql
 
 import sys
-
 import cx_Oracle
 import os
-from CellList1029 import *
+from CellList import *
 
 '''
 2018年10月23日16点24分备份
@@ -55,9 +54,17 @@ if __name__ == '__main__':
     basic_after = replace_null(basic_sheet)
     print('after' + str(basic_after))
 
-    # FAMIY_MEMBER
-    member_sheet = loc_member(sheet)
-    print(member_sheet)
+    # # FAMIY_MEMBER
+    # member_sheet = loc_member(sheet)
+    # print(member_sheet)
+
+    # # FAMILLY_PLANTING_TOTAL_INCOME
+    planting_sheet = loc_planting_income(sheet)
+    print(planting_sheet)
+
+    # FAMILY_BUSINSESS_TOTAL_INCOME
+    business_list = loc_business(sheet)
+    print(business_list)
 
     # 打开数据库连接
     host = "192.168.118.140"
